@@ -31,21 +31,23 @@ header {
 header nav {
   width: 100%;
   background-color: var(--blue);
-}
-
-nav .links {
-  width: 60%;
   display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
+  justify-content: space-evenly;
 }
 
-nav .links a {
+@media (max-width: 768px) {
+  /* tablet */
+  header nav {
+    flex-direction: column;
+  }
+}
+
+nav a {
   padding: 20px;
   text-decoration: none;
   color: var(--white);
 }
-nav .links a:hover {
+nav a:hover {
   background-color: var(--yellow);
   color: var(--black);
 }
@@ -74,6 +76,13 @@ nav .links a:hover {
   margin-bottom: 20px;
 }
 
+@media (max-width: 500px) {
+  .title h1 {
+    text-align: left;
+    font-size: 20px;
+  }
+}
+
 .title i {
   color: var(--yellow);
 }
@@ -100,16 +109,28 @@ nav .links a:hover {
 /* - - - - - -  MAIN CONTAINER STYLES - - - - - - - */
 
 .main {
-  width: 60%;
+  width: 70%;
   background-color: var(--white);
   margin: 20px auto 0px;
   padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .main {
+    width: 100%;
+  }
 }
 
 .main .services {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+@media (max-width: 500px) {
+  .main .services {
+    flex-direction: column;
+  }
 }
 
 .main .services .service {
@@ -150,10 +171,16 @@ nav .links a:hover {
 /* - - - - - -  CONTACT STYLES - - - - - - - */
 
 .contact {
-  width: 60%;
+  width: 70%;
   margin: 0 auto;
   padding: 10px;
   background-color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .contact {
+    width: 100%;
+  }
 }
 
 form {
@@ -208,19 +235,8 @@ input[type="submit"]:focus {
 
 /* - - - - - -  MEDIA QUERIES - - - - - - - */
 
-@media (max-width: 900px) {
-  .main,
-  .contact {
-    width: 100%;
-  }
-}
+/* 
+min-width: 480px for phones
+min-width: 768px for tablets
 
-@media (max-width: 500px) {
-  .main .services {
-    display: flex;
-    flex-direction: column;
-  }
-  header .title {
-    font-size: 13px;
-  }
-}
+*/
