@@ -4,6 +4,18 @@
   box-sizing: border-box;
 }
 
+/* - - -  Scroll effect - - - */
+html {
+  scroll-snap-type: y mandatory;
+}
+
+header,
+.main,
+.contact {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   background-color: rgb(243, 243, 243);
@@ -35,14 +47,17 @@ header nav {
   justify-content: space-evenly;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   /* tablet */
   header nav {
     flex-direction: column;
+    align-items: center;
   }
 }
 
 nav a {
+  display: block;
+  text-align: center;
   padding: 20px;
   text-decoration: none;
   color: var(--white);
@@ -54,7 +69,7 @@ nav a:hover {
 
 /* LANDING IMAGE STYLES */
 
-.landing {
+.hero {
   width: 100%;
   height: 400px;
   background-image: url("../media/amy-hirschi-szrJ3wjzOMg-unsplash.jpg");
@@ -64,45 +79,50 @@ nav a:hover {
   align-items: center;
 }
 
-.landing .title {
-  width: 50%;
+.hero .hero-text {
   margin: 0 auto;
   text-align: center;
   padding: 20px;
   color: var(--white);
 }
 
-.title h1 {
+.hero-text h1 {
   margin-bottom: 20px;
 }
 
 @media (max-width: 500px) {
-  .title h1 {
-    text-align: left;
+  .hero-text h1 {
     font-size: 20px;
   }
 }
 
-.title i {
+.hero-text i {
   color: var(--yellow);
 }
 
-.title p {
+.hero-text p {
   font-weight: 600;
 }
 
-.title .btn {
+.hero-text .btn {
   padding: 10px 30px;
   border: none;
   background-color: var(--blue);
   margin: 20px;
   color: var(--white);
+  border-radius: 3px;
 }
 
-.title .btn:hover {
+@media (max-width: 500px) {
+  .btn {
+    width: 70%;
+  }
+}
+
+.hero-text .btn:hover {
   background-color: var(--yellow);
 }
-.title .btn:focus {
+.hero-text .btn:focus {
   outline: none;
 }
 
@@ -125,6 +145,8 @@ nav a:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
 }
 
 @media (max-width: 500px) {
